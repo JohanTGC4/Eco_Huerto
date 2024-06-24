@@ -7,8 +7,8 @@
     <link rel="icon" href="{{ asset('images/logoEcoHuerto.png') }}" type="image/x-icon">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ resources('css/Sidebar.css')}}">
-    <link rel="stylesheet" href="{{ resources('css/Crud.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
 </head>
 <body>
     <!----- Barra de menú lateral izquierdo ----->
@@ -130,6 +130,6 @@
             </div>
         </div>
     </div>
-    <script src="{{ resources('js/Sidebar.js')}}"></script>
+    <script src="{{ asset('js/Sidebar.js')}}"></script>
 </body>
 </html>

@@ -38,3 +38,20 @@ Route::get('/perfilC', function () {
     return view('perfilcli');
 })->name('perfilcli');
 
+
+
+
+Route::get('/homeCrud', function () {
+    return view('homeCrud');
+})->name('homeCrud');
+
+Route::get('/categoryCrud', function () {
+    return view('categoryCrud');
+})->name('categoryCrud');
+
+Route::get('/productCrud', function () {
+    return view('productCrud');
+})->name('productCrud');
+
+
+

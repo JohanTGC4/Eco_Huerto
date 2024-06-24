@@ -7,8 +7,8 @@
     <link rel="icon" href="{{ asset('images/logoEcoHuerto.png') }}" type="image/x-icon">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ resources('css/Sidebar.css')}}">
-    <link rel="stylesheet" href="{{ resources('css/Crud.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
 </head>
 <body>
     <!----- Barra de menú lateral izquierdo ----->
@@ -92,7 +92,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Manzanilla</td>
-                                    <td><img src="{{ resources('images/Planta-manzanilla.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-manzanilla.jpg')}}"></td>
                                     <td>Es una hierba muy conocida por su fragancia, sus propiedades medicinales y su valor en infusiones, además de ser una planta muy bonita.</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
@@ -103,7 +103,7 @@
                                 <tr>
                                     <td>2</td>
                                     <td>Frijoles</td>
-                                    <td><img src="{{ resources('images/Planta-frijol.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-frijol.jpg')}}"></td>
                                     <td>Los frijoles son una vaina suavemente curvada y dehiscente, lo que significa que se abre naturalmente cuando está madura.</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
@@ -114,7 +114,7 @@
                                 <tr>
                                     <td>3</td>
                                     <td>Brócoli</td>
-                                    <td><img src="{{ resources('images/Planta-brocoli.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-brocoli.jpg')}}"></td>
                                     <td>Es una verdura perteneciente a la familia de las crusiferas, suele desarrollar una cabeza central y varias menores dentro de la misma planta.</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
@@ -125,7 +125,7 @@
                                 <tr>
                                     <td>4</td>
                                     <td>Tomate</td>
-                                    <td><img src="{{ resources('images/Planta-tomate.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
                                     <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
@@ -140,6 +140,6 @@
             </div>
         </div>
     </div>
-    <script src="{{ resources('js/Sidebar.js')}}"></script>
+    <script src="{{ asset('js/Sidebar.js')}}"></script>
 </body>
 </html>
