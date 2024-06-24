@@ -14,7 +14,7 @@ class CreatePlantaTable extends Migration
             $table->string('imagen', 200);
             $table->string('descripcion', 200);
             $table->foreignId('categoria_planta_id_categoriaplanta')->constrained('categoria_planta')->references('id_categoriaplanta')->on('categoria_planta');
-            $table->foreignId('misplantas_id_misplantas')->constrained('misplantas')->references('id_misplantas')->on('misplantas');
+            // $table->foreignId('misplantas_id_misplantas')->constrained('misplantas')->references('id_misplantas')->on('misplantas');
             $table->timestamps();
         });
     }
