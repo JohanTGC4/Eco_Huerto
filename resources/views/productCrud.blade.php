@@ -7,8 +7,8 @@
     <link rel="icon" href="{{ asset('images/logoEcoHuerto.png') }}" type="image/x-icon">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ resources('css/Sidebar.css')}}">
-    <link rel="stylesheet" href="{{ resources('css/Crud.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
 </head>
 <body>
     <!----- Barra de menú lateral izquierdo ----->
@@ -97,7 +97,7 @@
                                     <td>$100.00 MXN</td>
                                     <td>50</td>
                                     <td>Es una hierba muy conocida por su fragancia, sus propiedades medicinales y su valor en infusiones, además de ser una planta muy bonita.</td>
-                                    <td><img src="{{ resources('images/Planta-manzanilla.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-manzanilla.jpg')}}"></td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -110,7 +110,7 @@
                                     <td>$170.99 MXN</td>
                                     <td>65</td>
                                     <td>Los frijoles son una vaina suavemente curvada y dehiscente, lo que significa que se abre naturalmente cuando está madura.</td>
-                                    <td><img src="{{ resources('images/Planta-frijol.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-frijol.jpg')}}"></td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -123,7 +123,7 @@
                                     <td>$120.00 MXN</td>
                                     <td>50</td>
                                     <td>Es una verdura perteneciente a la familia de las crusiferas, suele desarrollar una cabeza central y varias menores dentro de la misma planta.</td>
-                                    <td><img src="{{ resources('images/Planta-brocoli.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-brocoli.jpg')}}"></td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -136,7 +136,7 @@
                                     <td>$199.99 MXN</td>
                                     <td>70</td>
                                     <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
-                                    <td><img src="{{ resources('images/Planta-tomate.jpg')}}"></td>
+                                    <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -150,6 +150,6 @@
             </div>
         </div>
     </div>
-    <script src="{{ resources('js/Sidebar.js')}}"></script>
+    <script src="{{ asset('js/Sidebar.js')}}"></script>
 </body>
 </html>
