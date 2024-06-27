@@ -41,10 +41,18 @@ Route::get('/perfilC', function () {
 
 
 
-Route::get('/homeCrud', [PlantaController::class, 'index'])->name('Plantas.homeCrud');
-// Route::get('/homeCrud', function () {
-//     return view('Plantas.homeCrud');
-// })->name('homeCrud');
+// Route::get('/homeCrud', [PlantaController::class, 'index'])->name('Plantas.homeCrud');
+Route::get('/homeCrud', function () {
+    return view('Plantas.homeCrud');
+})->name('homeCrud');
+
+// Route::get('/plantaShow', function () {
+//     return view('Plantas.plantaShow');
+// })->name('plantaShow');
+
+// Route::get('/plantaEdit', function () {
+//     return view('Plantas.plantaEdit');
+// })->name('plantaEdit');
 
 Route::get('/categoryCrud', function () {
     return view('categoryCrud');

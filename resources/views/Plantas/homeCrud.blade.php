@@ -1,5 +1,5 @@
-@extends('layout.app')
-@section('content')
+{{-- @extends('layout.app')
+@section('content') --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,10 +73,10 @@
                 <div class="table-header">
                     <Strong><p>Plantas</p></Strong>
                     <div>
-                        @can('planta-create')
-                        <button class="add" onclick="window.location='{{route('Plantas.plantaCreate')}}'"
+                        {{-- @can('planta-create') --}}
+                        <button class="add" {{--onclick="window.location='{{route('Plantas.plantaCreate')}}'"--}}
                         data-toggle="modal" data-target="#ModalCreate"><i class='bx bx-plus-medical'></i>Agregar planta</button>
-                        @endcan
+                        {{-- @endcan --}}
                         <input class="Inp" type="search" placeholder="Buscar">
                     </div>
                     <!----- Aquí empieza la tabla general ----->
@@ -94,12 +94,12 @@
                             </thead>
                             <!----- Columnas por Id ----->
                             <tbody>
-                                @foreach($plants as $plant)
+                                {{-- @foreach($plants as $plant) --}}
                                 <tr>
                                     <td>1</td>
-                                    <td>{{$plant->nombre}}</td>
-                                    <td>{{$imagePath}}</td>
-                                    <td>{{$plant->descripcion}}</td>
+                                    <td>Manzanilla</td>
+                                    <td><img src="{{ asset('images/Planta-manzanilla.jpg')}}"></td>
+                                    <td>Es una hierba muy conocida por su fragancia, sus propiedades medicinales y su valor en infusiones, además de ser una planta muy bonita.</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -134,12 +134,12 @@
                                     <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
                                     <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
                                     <td>
-                                        <button class="actions" onclick="window.location='{{route('Plantas.plantaShow', $plant->id)}}'"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions" onclick="window.location='{{route('Plantas.plantaEdit', $plant->id)}}'"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaShow')}}'"--}}><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaEdit')}}'"--}}><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button class="actions" type="submit"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                @endforeach
+                                {{-- @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -148,7 +148,7 @@
         </div>
     </div>
     <script src="{{ asset('js/Sidebar.js')}}"></script>
-    @include('Plantas.plantaCreate')
-    @endsection
+    {{-- @include('Plantas.plantaCreate')
+    @endsection --}}
 </body>
 </html>
