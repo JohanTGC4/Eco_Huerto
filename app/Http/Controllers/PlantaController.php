@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PlantaController extends Controller{
     public function index(){
         $plants = Planta::all();
+        print_r($plants);
+        dd($plants);
+        die();
         return view('Plantas.homeCrud', compact('plants'));
     }
 

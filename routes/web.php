@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -40,7 +41,7 @@ Route::get('/perfilC', function () {
 
 
 
-
+// Route::get('/homeCrud', [PlantaController::class, 'Plantas.homeCrud'])->name('homeCrud');
 Route::get('/homeCrud', function () {
     return view('Plantas.homeCrud');
 })->name('homeCrud');
