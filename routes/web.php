@@ -42,7 +42,7 @@ Route::get('/perfilC', function () {
 
 
 Route::get('/homeCrud', function () {
-    return view('homeCrud');
+    return view('Plantas.homeCrud');
 })->name('homeCrud');
 
 Route::get('/categoryCrud', function () {
