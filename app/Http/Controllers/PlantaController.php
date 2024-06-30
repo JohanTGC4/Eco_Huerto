@@ -1,15 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Planta;
+use App\Models\PlantaModel;
 use Illuminate\Http\Request;
 
 class PlantaController extends Controller{
     public function index(){
-        $plants = Planta::all();
-        print_r($plants);
-        dd($plants);
-        die();
+        $plants = PlantaModel::all();
+        // print_r($plants);
+        // dd($plants);
+        // die();
         return view('Plantas.homeCrud', compact('plants'));
     }
 
@@ -26,7 +26,7 @@ class PlantaController extends Controller{
 
         $imagePath = $request->file('imagen')->store('images', 'public');
 
-        Planta::create([
+        PlantaModel::create([
             'nombre' => $request->nombre,
             'imagen' => $imagePath,
             'descripcion' => $request->descripcion,
@@ -37,13 +37,13 @@ class PlantaController extends Controller{
 
     public function show($id)
     {
-        $plant = Planta::findOrFail($id);
+        $plant = PlantaModel::findOrFail($id);
         return view('Plantas.plantaShow', compact('plant'));
     }
 
     public function edit($id)
     {
-        $plant = Planta::findOrFail($id);
+        $plant = PlantaModel::findOrFail($id);
         return view('Plantas.plantaEdit', compact('plant'));
     }
 
@@ -54,7 +54,7 @@ class PlantaController extends Controller{
             'descripcion' => 'required',
         ]);
 
-        $plant = Planta::findOrFail($id);
+        $plant = PlantaModel::findOrFail($id);
         if($request->hasFile('imagen')){
             $imagePath = $request->file('imagen')->store('images', 'public');
             $plant->imagen = $imagePath;
@@ -68,7 +68,7 @@ class PlantaController extends Controller{
     }
 
     public function destroy($id){
-        $plant = Planta::findOrFail($id);
+        $plant = PlantaModel::findOrFail($id);
         $plant->delete();
         return redirect()->route('Plantas.homeCrud')->with('success', 'Planta eliminada exitosamente');
     }

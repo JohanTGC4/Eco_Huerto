@@ -94,7 +94,7 @@
                             </thead>
                             <!----- Columnas por Id ----->
                             <tbody>
-                                {{-- @foreach($plants as $plant) --}}
+                                @foreach($plants as $plant)
                                 <tr>
                                     <td>1</td>
                                     <td>Manzanilla</td>
@@ -139,7 +139,7 @@
                                         <button class="actions" type="submit"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
