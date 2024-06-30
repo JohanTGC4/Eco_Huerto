@@ -1,15 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class UsuarioController extends Controller
-{
-    //
-}
-=======
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\usuario;
@@ -124,4 +113,3 @@ class UsuarioController extends Controller
         return redirect('/');
     }
 }
->>>>>>> main
