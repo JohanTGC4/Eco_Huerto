@@ -13,11 +13,5 @@ class PerfilController extends Controller
     
         
     }
-    public function blog()
-    {
-        
-        return view('blog');
-    
-        
-    }
+   
 }

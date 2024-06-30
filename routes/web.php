@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\MisPlantasController;
+use App\Http\Controllers\blogController;
+use App\Http\Controllers\ComprarController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,10 +47,13 @@ Route::get('/login', function () {
 
 Route::group(['prefix' => 'usuarios', 'middleware' => 'auth:usuario'], function() {
     Route::get('/perfilC', [PerfilController::class, 'index'])->name('perfilC');
-    Route::get('/blog', [PerfilController::class, 'blog'])->name('blog');
-    Route::get('/misPlantas', [PerfilController::class, 'misPlantas'])->name('misPlantas');
-    Route::get('/comprar', [PerfilController::class, 'comprar'])->name('comprar');
-    Route::get('/home', [PerfilController::class, 'home'])->name('home');
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/misplantas', [MisPlantasController::class, 'index'])->name('misplantas');
+    Route::get('/comprar', [ComprarController::class, 'index'])->name('comprar');
+    // Route::get('/home', [PerfilController::class, 'home'])->name('home');
+    Route::get('/home', function () { 
+        return view('home');
+})->name('home');
   
    
 });
