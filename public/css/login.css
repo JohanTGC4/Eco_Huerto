@@ -1,5 +1,5 @@
 
-  body{
+body{
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -7,7 +7,7 @@
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-  background-image: url('../images/fondo2.jpg'),
+  background-image: url('../images/login.jpg'),
   linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: cover; /* Asegura que la imagen cubra todo el fondo */
 		background-position: center; /* Centra la imagen */

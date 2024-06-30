@@ -29,7 +29,7 @@ class MisplantasController extends Controller
         // Obtener todas las categorías para mostrar en el formulario
         $categorias = Categoria::all();
         $userId = Auth::id();
-
+        $misplantas = "";
            // Obtener las plantas del usuario autenticado
     $misplantas = MisPlantas::where('usuario_id_usuario', $userId)
     ->with('planta') // Cargar la relación planta

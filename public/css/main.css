@@ -3613,7 +3613,7 @@ input, select, textarea {
 	#header {
 	
 		/*background-color: #34b43f;*/
-		background-image: url('../images/5-consejos-para-hacer-un-huerto-en-la-terraza-de-casa.jpg'),
+		background-image: url('../images/fondopri.jpg'),
 		linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 		background-size: cover; /* Asegura que la imagen cubra todo el fondo */
 		background-position: center; /* Centra la imagen */
@@ -3760,7 +3760,7 @@ input, select, textarea {
 			}
 
 				#header .image.phone .inner, #header .image.phone:before, #header .image.phone:after {
-					border-color: rgba(130, 211, 134, 0.904);
+					border-color: rgb(255, 255, 255);
 				}
 
 				#header .image.phone .inner:before {
@@ -3901,7 +3901,7 @@ input, select, textarea {
 @media screen and (max-width: 480px) {
     #header {
         padding: 2em 0.5em;
-        background-image: url('../images/5-consejos-para-hacer-un-huerto-en-la-terraza-de-casa.jpg'),
+        background-image: url('../images/imagendelfondo3.jpg'),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     }
 
@@ -3944,7 +3944,7 @@ input, select, textarea {
 @media screen and (max-width: 736px) {
     #header {
         padding: 3em 1em;
-        background-image: url('../images/5-consejos-para-hacer-un-huerto-en-la-terraza-de-casa.jpg'),
+        background-image: url('../images/imagendelfondo3.jpg'),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     }
 
@@ -4019,7 +4019,7 @@ input, select, textarea {
 /* For devices with a width of 1280px and smaller */
 @media screen and (max-width: 1280px) {
     #header {
-        background-image: url('../images/5-consejos-para-hacer-un-huerto-en-la-terraza-de-casa.jpg'),
+        background-image: url('../images/imagendelfondo3.jpg'),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     }
 }
