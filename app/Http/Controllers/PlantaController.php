@@ -10,7 +10,7 @@ class PlantaController extends Controller{
         // print_r($plants);
         // dd($plants);
         // die();
-        return view('Plantas.homeCrud', compact('plants'));
+        return view('admin.Plantas.homeCrud', compact('plants'));
     }
 
     public function create(){
@@ -32,19 +32,19 @@ class PlantaController extends Controller{
             'descripcion' => $request->descripcion,
         ]);
 
-        return redirect()->route('Plantas.homeCrud')->with('success', 'Planta agregada exitosamente');
+        return redirect()->route('admin.Plantas.homeCrud')->with('success', 'Planta agregada exitosamente');
     }
 
     public function show($id)
     {
         $plant = PlantaModel::findOrFail($id);
-        return view('Plantas.plantaShow', compact('plant'));
+        return view('admin.Plantas.plantaShow', compact('plant'));
     }
 
     public function edit($id)
     {
         $plant = PlantaModel::findOrFail($id);
-        return view('Plantas.plantaEdit', compact('plant'));
+        return view('admin.Plantas.plantaEdit', compact('plant'));
     }
 
     public function update(Request $request, $id){
@@ -64,12 +64,12 @@ class PlantaController extends Controller{
         $plant->descripcion = $request->descripcion;
         $plant->save();
 
-        return redirect()->route('Plantas.homeCrud')->with('success', 'Planta actualizada exitosamente');
+        return redirect()->route('admin.Plantas.homeCrud')->with('success', 'Planta actualizada exitosamente');
     }
 
     public function destroy($id){
         $plant = PlantaModel::findOrFail($id);
         $plant->delete();
-        return redirect()->route('Plantas.homeCrud')->with('success', 'Planta eliminada exitosamente');
+        return redirect()->route('admin.Plantas.homeCrud')->with('success', 'Planta eliminada exitosamente');
     }
 }
