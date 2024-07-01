@@ -9,5 +9,5 @@ class PlantaModel extends Model{
     use HasFactory;
 
     protected $table = 'planta';
-    protected $fillable = ['nombre', 'imagen', 'descripcion',];
+    protected $fillable = ['nombre', 'imagen', 'descripcion', 'categoria_planta_id_categoriaplanta'];
 }

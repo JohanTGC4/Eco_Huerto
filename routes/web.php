@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PlantaController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,21 +43,35 @@ Route::get('/perfilC', function () {
 
 
 Route::get('/homeCrud', [PlantaController::class, 'index'])->name('homeCrud');
+Route::get('/plantaCreate', [PlantaController::class, 'create'])->name('admin.Plantas.plantaCreate');
+Route::post('/plantaStore', [PlantaController::class, 'store'])->name('admin.Plantas.plantaStore');
 // Route::get('/homeCrud', function () {
 //     return view('Plantas.homeCrud');
 // })->name('homeCrud');
 
-// Route::get('/plantaShow', function () {
-//     return view('Plantas.plantaShow');
-// })->name('plantaShow');
+Route::get('/plantaShow', function () {
+    return view('admin.Plantas.plantaShow');
+})->name('plantaShow');
 
-// Route::get('/plantaEdit', function () {
-//     return view('Plantas.plantaEdit');
-// })->name('plantaEdit');
+Route::get('/plantaEdit', function () {
+    return view('admin.Plantas.plantaEdit');
+})->name('plantaEdit');
 
-Route::get('/categoryCrud', function () {
-    return view('categoryCrud');
-})->name('categoryCrud');
+Route::get('/categoryCrud', [CategoriaController::class, 'index'])->name('categoryCrud');
+Route::get('/categoryCreate', [CategoriaController::class, 'create'])->name('admin.Categorias.categoryCreate');
+Route::post('/categoryStore', [CategoriaController::class, 'store'])->name('admin.Categorias.categoryStore');
+
+// Route::get('/categoryCrud', function () {
+//     return view('admin.Categorias.categoryCrud');
+// })->name('categoryCrud');
+
+Route::get('/categoryShow', function () {
+    return view('admin.Categorias.categoryShow');
+})->name('categoryShow');
+
+Route::get('/categoryEdit', function () {
+    return view('admin.Categorias.categoryEdit');
+})->name('categoryEdit');
 
 Route::get('/productCrud', function () {
     return view('productCrud');

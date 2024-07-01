@@ -1,4 +1,4 @@
-{{-- @extends('layout.app')
+{{-- @extends('layouts.sidebar')
 @section('content') --}}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,59 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
     <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/modalForm.css')}}">
 </head>
 <body>
-    <!----- Barra de menú lateral izquierdo ----->
-    <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <a href="AdminCrud.html" class="imagen"><img src="{{ asset('images/logoEcoHuerto.png') }}" width="60" alt=""></a>
-                <span>Eco Huerto</span>
-            </div>
-            <i class="bx bx-menu" id="btn"></i>
-        </div>
-        <!----- Perfil de usuario ----->
-        <div class="user">
-            <img src="{{ asset('images/avatar1.jpg') }}" alt="" class="user-img">
-            <div>
-                <a href="#"><p class="bold">Carmen Muñoz</p></a>
-                <p>Administradora</p>
-            </div>
-        </div>
-        <!----- Menú ----->
-        <ul>
-            <li>
-                <a href="{{ route('homeCrud')}}"><i class='bx bxs-leaf'></i>
-                    <span class="nav-item">Plantas</span>
-                </a>
-                <span class="tooltip">Plantas</span>
-            </li>
-            <li>
-                <a href="{{ route('categoryCrud')}}"><i class='bx bx-category'></i>
-                    <span class="nav-item">Categorías</span>
-                </a>
-                <span class="tooltip">Categorías</span>
-            </li>
-            <li>
-                <a href="{{ route('productCrud')}}"><i class='bx bxs-shopping-bag'></i>
-                    <span class="nav-item">Productos</span>
-                </a>
-                <span class="tooltip">Productos</span>
-            </li>
-            <li>
-                <a href=""><i class='bx bx-cog'></i>
-                    <span class="nav-item">Configuración</span>
-                </a>
-                <span class="tooltip">Configuración</span>
-            </li>
-            <li>
-                <a href="{{ route('login')}}"><i class='bx bx-log-out'></i>
-                    <span class="nav-item">Salir</span>
-                </a>
-                <span class="tooltip">Salir</span>
-            </li>
-        </ul>
-    </div>
+    @include('layouts.sidebar')
     <!----- Panel de administración ----->
     <div class="main-content">
         <div class="container">
@@ -74,7 +25,7 @@
                     <Strong><p>Plantas</p></Strong>
                     <div>
                         {{-- @can('planta-create') --}}
-                        <button class="add" {{--onclick="window.location='{{route('Plantas.plantaCreate')}}'"--}}
+                        <button class="add" onclick="window.location='{{route('admin.Plantas.plantaCreate')}}'"
                         data-toggle="modal" data-target="#ModalCreate"><i class='bx bx-plus-medical'></i>Agregar planta</button>
                         {{-- @endcan --}}
                         <input class="Inp" type="search" placeholder="Buscar">
@@ -89,6 +40,7 @@
                                     <th>Nombre</th>
                                     <th>Imagen</th>
                                     <th>Descripción</th>
+                                    <th>Categoría</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -96,17 +48,18 @@
                             <tbody>
                                 @foreach($plants as $plant)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Manzanilla</td>
-                                    <td><img src="{{ asset('images/Planta-manzanilla.jpg')}}"></td>
-                                    <td>Es una hierba muy conocida por su fragancia, sus propiedades medicinales y su valor en infusiones, además de ser una planta muy bonita.</td>
+                                    <td>{{$plant->id_planta}}</td>
+                                    <td>{{$plant->nombre}}</td>
+                                    <td><img src="{{ asset('storage/' . $plant->imagen)}}"></td>
+                                    <td>{{$plant->descripcion}}</td>
+                                    <td>{{$plant->categoria_planta_id_categoriaplanta}}</td>
                                     <td>
                                         <button class="actions"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button class="actions"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td>2</td>
                                     <td>Frijoles</td>
                                     <td><img src="{{ asset('images/Planta-frijol.jpg')}}"></td>
@@ -134,11 +87,11 @@
                                     <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
                                     <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
                                     <td>
-                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaShow')}}'"--}}><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaEdit')}}'"--}}><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaShow')}}'"--><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaEdit')}}'"--><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button class="actions" type="submit"><i class="fa-solid fa-trash"></i></button>
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 @endforeach
                             </tbody>
                         </table>
@@ -148,7 +101,8 @@
         </div>
     </div>
     <script src="{{ asset('js/Sidebar.js')}}"></script>
-    {{-- @include('Plantas.plantaCreate')
-    @endsection --}}
+    <script src="{{ asset('js/Modal.js')}}"></script>
+    @include('admin.Plantas.plantaCreate')
+    {{-- @endsection --}}
 </body>
 </html>
