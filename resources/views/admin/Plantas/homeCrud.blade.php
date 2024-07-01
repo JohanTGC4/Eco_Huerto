@@ -54,10 +54,10 @@
                                     <td>{{$plant->descripcion}}</td>
                                     <td>{{$plant->categoria_planta_id_categoriaplanta}}</td>
                                     <td>
-                                        <button class="actions" onclick="window.location='{{ route('admin.Plantas.plantaShow', $plant->id_planta) }}'"
+                                        <button class="actions view" onclick="window.location='{{ route('admin.Plantas.plantaShow', $plant->id_planta) }}'"
                                         data-toggle="show" data-target="#ModalShow"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions" ><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="actions edit" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 {{-- <tr>

@@ -127,15 +127,15 @@ td img{
     font-size: 15px;
 }
 
-.actions .view{
+td button:nth-child(1){
     background-color: #0298cf;
 }
 
-td button .actions .edit{
+td button:nth-child(2){
     background-color: #4bc130;
 }
 
-td button .actions .delete{
+td button:nth-child(3){
     background-color: #cf0202;
 }
 
