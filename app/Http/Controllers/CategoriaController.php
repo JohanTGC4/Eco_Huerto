@@ -50,6 +50,6 @@ class CategoriaController extends Controller{
     public function destroy($id){
         $cat = CategoriaModel::findOrFail($id);
         $cat->delete();
-        return redirect()->route('admin.Categorias.categoryCrud')->with('success', 'Categoría eliminada exitosamente');
+        return redirect()->route('categoryCrud')->with('success', 'Categoría eliminada exitosamente');
     }
 }

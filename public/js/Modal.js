@@ -17,4 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
         }
     }
+
+    window.onclick = function openEditModal(editUrl){
+        modal.style.display = editUrl;
+    }
 });

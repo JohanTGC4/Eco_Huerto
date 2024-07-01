@@ -54,8 +54,9 @@
                                     <td>{{$plant->descripcion}}</td>
                                     <td>{{$plant->categoria_planta_id_categoriaplanta}}</td>
                                     <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions" onclick="window.location='{{ route('admin.Plantas.plantaShow', $plant->id_planta) }}'"
+                                        data-toggle="show" data-target="#ModalShow"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions" ><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button class="actions"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -103,6 +104,7 @@
     <script src="{{ asset('js/Sidebar.js')}}"></script>
     <script src="{{ asset('js/Modal.js')}}"></script>
     @include('admin.Plantas.plantaCreate')
+    @include('admin.Plantas.plantaShow')
     {{-- @endsection --}}
 </body>
 </html>
