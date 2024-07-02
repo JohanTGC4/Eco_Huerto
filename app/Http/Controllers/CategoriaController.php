@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategoriaModel;
+use App\Models\PlantaModel;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller{
@@ -47,9 +48,10 @@ class CategoriaController extends Controller{
         return redirect()->route('admin.Categorias.categoryCrud')->with('success', 'Categoría actualizada exitosamente');
     }
 
-    public function destroy($id){
+    public function destroy(String $id){
         $cat = CategoriaModel::findOrFail($id);
+        PlantaModel::where('categoria_planta_id_categoriaplanta', $id)->delete();
         $cat->delete();
-        return redirect()->route('categoryCrud')->with('success', 'Categoría eliminada exitosamente');
+        return redirect()->back();
     }
 }

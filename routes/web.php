@@ -62,7 +62,8 @@ Route::get('/categoryCrud', [CategoriaController::class, 'index'])->name('catego
 Route::get('/categoryCreate', [CategoriaController::class, 'create'])->name('admin.Categorias.categoryCreate');
 Route::post('/categoryStore', [CategoriaController::class, 'store'])->name('admin.Categorias.categoryStore');
 Route::put('/categoryEdit/{id}', [CategoriaController::class, 'update'])->name('admin.Categorias.categoryEdit');
-Route::delete('/categoryDestroy/{id}', [CategoriaController::class, 'destroy'])->name('admin.Categorias.category');
+Route::post('/categoryDestroy/{id}', [CategoriaController::class, 'destroy'])->name('admin.Categorias.category');
+
 // Route::get('/categoryCrud', function () {
 //     return view('admin.Categorias.categoryCrud');
 // })->name('categoryCrud');

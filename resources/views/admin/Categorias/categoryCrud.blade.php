@@ -48,40 +48,15 @@
                                     <td>{{$cat->id_categoriaplanta}}</td>
                                     <td>{{$cat->nombre}}</td>
                                     <td>
-                                        {{-- <button class="actions view"><i class="fa-regular fa-eye"></i></button> --}}
                                         <button class="actions edit" onclick="openEditModal('{{ route('admin.Categorias.categoryEdit', $cat->id_categoriaplanta) }}')"
                                         data-toggle="modal" data-target="#ModalEdit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions delete" onclick="return confirm('¿Estás seguro de eliminar esta categoría?')"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                    {{-- @include('admin.Categorias.categoryEdit') --}}
-                                </tr>
-                                {{-- <tr>
-                                    <td>2</td>
-                                    <td>Frijoles</td>
-                                    <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <form action="{{ route('admin.Categorias.category', $cat->id_categoriaplanta) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="actions delete" ><i class="fa-solid fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Brócoli</td>
-                                    <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Tomate</td>
-                                    <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr> --}}
                                 @endforeach
                             </tbody>
                         </table>

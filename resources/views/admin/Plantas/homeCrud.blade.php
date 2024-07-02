@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
     <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/modalForm.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/Modal.css')}}">
 </head>
 <body>
     @include('layouts.sidebar')
