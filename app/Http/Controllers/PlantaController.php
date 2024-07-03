@@ -69,9 +69,10 @@ class PlantaController extends Controller{
         return redirect()->route('admin.Plantas.homeCrud')->with('success', 'Planta actualizada exitosamente');
     }
 
-    public function destroy($id){
-        $plant = PlantaModel::findOrFail($id);
-        $plant->delete();
-        return redirect()->route('admin.Plantas.homeCrud')->with('success', 'Planta eliminada exitosamente');
+    public function destroy(String $id){
+        $cat = PlantaModel::findOrFail($id);
+        PlantaModel::where('categoria_planta_id_categoriaplanta', $id)->delete();
+        $cat->delete();
+        return redirect()->back();
     }
 }

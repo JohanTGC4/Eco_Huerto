@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Sidebar.css')}}">
     <link rel="stylesheet" href="{{ asset('css/Crud.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/Modal.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/modalForm.css')}}">
+   
 </head>
 <body>
     @include('layouts.sidebar')
@@ -25,10 +26,9 @@
                     <Strong><p>Plantas</p></Strong>
                     <div>
                         {{-- @can('planta-create') --}}
-                        <button class="add" onclick="window.location='{{route('admin.Plantas.plantaCreate')}}'"
-                        data-toggle="modal" data-target="#ModalCreate"><i class='bx bx-plus-medical'></i>Agregar planta</button>
+                        <button id="open-modal-btn" class="add"><i class='bx bx-plus-medical'></i>Agregar planta</button>
                         {{-- @endcan --}}
-                        <input class="Inp" type="search" placeholder="Buscar">
+                        <input class="Inp" type="search" placeholder="Buscar"><i class='bx bx-search-alt-2'></i>
                     </div>
                     <!----- Aquí empieza la tabla general ----->
                     <div class="table-body">
@@ -54,45 +54,15 @@
                                     <td>{{$plant->descripcion}}</td>
                                     <td>{{$plant->categoria_planta_id_categoriaplanta}}</td>
                                     <td>
-                                        <button class="actions view" onclick="window.location='{{ route('admin.Plantas.plantaShow', $plant->id_planta) }}'"
+                                        <button id="open-modal-btn" class="actions view" onclick="window.location='{{ route('admin.Plantas.plantaShow', $plant->id_planta) }}'"
                                         data-toggle="show" data-target="#ModalShow"><i class="fa-regular fa-eye"></i></button>
                                         <button class="actions edit" ><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
+                                        <form action="{{ route('admin.Plantas.plantaDestroy', $plant->id_planta) }}" method="post">
+                                            @csrf
+                                            <button class="actions delete" ><i class="fa-solid fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
-                                {{-- <tr>
-                                    <td>2</td>
-                                    <td>Frijoles</td>
-                                    <td><img src="{{ asset('images/Planta-frijol.jpg')}}"></td>
-                                    <td>Los frijoles son una vaina suavemente curvada y dehiscente, lo que significa que se abre naturalmente cuando está madura.</td>
-                                    <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Brócoli</td>
-                                    <td><img src="{{ asset('images/Planta-brocoli.jpg')}}"></td>
-                                    <td>Es una verdura perteneciente a la familia de las crusiferas, suele desarrollar una cabeza central y varias menores dentro de la misma planta.</td>
-                                    <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Tomate</td>
-                                    <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
-                                    <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
-                                    <td>
-                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaShow')}}'"--><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions" {{--onclick="window.location='{{route('Plantas.plantaEdit')}}'"--><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions" type="submit"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr> --}}
                                 @endforeach
                             </tbody>
                         </table>
@@ -101,8 +71,38 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/Sidebar.js')}}"></script>
-    <script src="{{ asset('js/Modal.js')}}"></script>
+    <!-- :::::::::::::::::::: MODAL AGREGAR :::::::::::::::::: -->
+    {{-- <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="{{ route('admin.Plantas.plantaStore') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" class="form-control" id="imagen" name="imagen" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Imagen</label>
+                    <textarea type="textarea" class="form-control" id="descripcion" name="descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="seleccion">ID Categoría</label>
+                    <select class="form-control" id="seleccion" name="seleccion" required>
+                        <option value="Seleccion" disabled selected>Selecciona ID Categoría</option>
+                        <option value="1">1 - Hortalizas</option>
+                        <option value="2">2 - Legumbres</option>
+                        <option value="3">3 - Medicinal</option>
+                        <option value="4">4 - Verduras</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div> --}}
     @include('admin.Plantas.plantaCreate')
     @include('admin.Plantas.plantaShow')
     {{-- @endsection --}}

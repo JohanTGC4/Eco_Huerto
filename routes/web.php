@@ -46,6 +46,7 @@ Route::get('/homeCrud', [PlantaController::class, 'index'])->name('homeCrud');
 Route::get('/plantaCreate', [PlantaController::class, 'create'])->name('admin.Plantas.plantaCreate');
 Route::post('/plantaStore', [PlantaController::class, 'store'])->name('admin.Plantas.plantaStore');
 Route::get('/plantaShow/{id}', [PlantaController::class, 'show'])->name('admin.Plantas.plantaShow');
+Route::post('/plantaDestroy/{id}', [PlantaController::class, 'destroy'])->name('admin.Plantas.plantaDestroy');
 // Route::get('/homeCrud', function () {
 //     return view('Plantas.homeCrud');
 // })->name('homeCrud');

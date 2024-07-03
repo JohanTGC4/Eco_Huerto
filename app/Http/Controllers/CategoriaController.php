@@ -49,7 +49,7 @@ class CategoriaController extends Controller{
     }
 
     public function destroy(String $id){
-        $cat = CategoriaModel::findOrFail($id);
+        $cat = CategoriaModel::find($id);
         PlantaModel::where('categoria_planta_id_categoriaplanta', $id)->delete();
         $cat->delete();
         return redirect()->back();

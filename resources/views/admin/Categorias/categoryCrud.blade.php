@@ -25,10 +25,9 @@
                     <Strong><p>Categoría de plantas</p></Strong>
                     <div>
                         {{-- @can('planta-create') --}}
-                        <button class="add" onclick="window.location='{{route('admin.Categorias.categoryCreate')}}'"
-                        data-toggle="modal" data-target="#ModalCreate"><i class='bx bx-plus-medical'></i>Agregar categoría</button>
+                        <button id="open-modal-btn" class="add"><i class='bx bx-plus-medical'></i>Agregar categoría</button>
                         {{-- @endcan --}}
-                        <input class="Inp" type="search" placeholder="Buscar">
+                        <input class="Inp" type="search" placeholder="Buscar"><i class='bx bx-search-alt-2'></i>
                     </div>
                     <!----- Aquí empieza la tabla general ----->
                     <div class="table-body">
@@ -48,11 +47,9 @@
                                     <td>{{$cat->id_categoriaplanta}}</td>
                                     <td>{{$cat->nombre}}</td>
                                     <td>
-                                        <button class="actions edit" onclick="openEditModal('{{ route('admin.Categorias.categoryEdit', $cat->id_categoriaplanta) }}')"
-                                        data-toggle="modal" data-target="#ModalEdit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions edit" id="open-modal-btn"><i class="fa-solid fa-pen-to-square"></i></button>
                                         <form action="{{ route('admin.Categorias.category', $cat->id_categoriaplanta) }}" method="post">
                                             @csrf
-                                            @method('DELETE')
                                             <button class="actions delete" ><i class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>

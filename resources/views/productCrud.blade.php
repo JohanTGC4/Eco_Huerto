@@ -72,7 +72,7 @@
                     <Strong><p>Productos</p></Strong>
                     <div>
                         <button class="add"><i class='bx bx-plus-medical'></i>Agregar producto</button>
-                        <input class="Inp" type="search" placeholder="Buscar">
+                        <input class="Inp" type="search" placeholder="Buscar"><i class='bx bx-search-alt-2'></i>
                     </div>
                     <!----- Aquí empieza la tabla general ----->
                     <div class="table-body">
@@ -99,9 +99,9 @@
                                     <td>Es una hierba muy conocida por su fragancia, sus propiedades medicinales y su valor en infusiones, además de ser una planta muy bonita.</td>
                                     <td><img src="{{ asset('images/Planta-manzanilla.jpg')}}"></td>
                                     <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="actions view"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -112,9 +112,9 @@
                                     <td>Los frijoles son una vaina suavemente curvada y dehiscente, lo que significa que se abre naturalmente cuando está madura.</td>
                                     <td><img src="{{ asset('images/Planta-frijol.jpg')}}"></td>
                                     <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="actions view"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -125,9 +125,9 @@
                                     <td>Es una verdura perteneciente a la familia de las crusiferas, suele desarrollar una cabeza central y varias menores dentro de la misma planta.</td>
                                     <td><img src="{{ asset('images/Planta-brocoli.jpg')}}"></td>
                                     <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="actions view"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -138,9 +138,9 @@
                                     <td>Los tomates son frutos de planta de la familia de las solanáceas, son plantas amantes del sol y el calor, para que crezcan sanos es esencial que reciban pleno sol.</td>
                                     <td><img src="{{ asset('images/Planta-tomate.jpg')}}"></td>
                                     <td>
-                                        <button class="actions"><i class="fa-regular fa-eye"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="actions"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="actions view"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="actions edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="actions delete"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

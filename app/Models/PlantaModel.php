@@ -10,5 +10,6 @@ class PlantaModel extends Model{
 
     protected $table = 'planta';
     protected $primaryKey = 'id_planta';
+    // protected $foreignKey = 'categoria_planta_id_categoriaplanta';
     protected $fillable = ['nombre', 'imagen', 'descripcion', 'categoria_planta_id_categoriaplanta'];
 }
